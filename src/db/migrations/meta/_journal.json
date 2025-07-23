@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1752103889588,
-      "tag": "0000_past_captain_cross",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1752125878781,
-      "tag": "0001_nice_nick_fury",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1752385003048,
-      "tag": "0002_dashing_tattoo",
+      "when": 1753295792096,
+      "tag": "0000_charming_speedball",
       "breakpoints": true
     }
   ]

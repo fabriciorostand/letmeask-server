@@ -3,10 +3,10 @@ import { rooms } from './rooms.ts';
 
 export const questions = pgTable('questions', {
   id: uuid().primaryKey().defaultRandom(),
-  room_id: uuid()
+  roomId: uuid()
     .references(() => rooms.id)
     .notNull(),
   question: text().notNull(),
   answer: text(),
-  created_at: timestamp().defaultNow().notNull(),
+  createdAt: timestamp().defaultNow().notNull(),
 });
