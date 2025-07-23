@@ -16,7 +16,7 @@ import { uploadAudioRoute } from './http/routes/upload-audio.ts';
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors, {
-  origin: 'http://localhost:5173', // Substitua pela URL do frontend
+  origin: env.FRONTEND_URL, // Substitua pela URL do frontend
 });
 
 app.register(fastifyMultipart);
@@ -34,4 +34,4 @@ app.register(getRoomQuestions);
 app.register(createQuestionRoute);
 app.register(uploadAudioRoute);
 
-app.listen({ port: env.PORT });
+app.listen({ port: env.PORT, host: '0.0.0.0' });
