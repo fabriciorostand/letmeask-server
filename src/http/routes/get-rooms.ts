@@ -10,18 +10,10 @@ export const getRoomsRoute: FastifyPluginCallbackZod = (app) => {
         id: schema.rooms.id,
         name: schema.rooms.name,
         createdAt: schema.rooms.created_at,
-        questionsCount: count(schema.questions.id),
       })
       .from(schema.rooms)
-      .leftJoin(schema.questions, eq(schema.questions.room_id, schema.rooms.id))
-      .groupBy(schema.rooms.id, schema.rooms.name, schema.rooms.created_at)
       .orderBy(schema.rooms.created_at);
-
-      const sanitizedResults = results.map((room) => ({
-        ...room,
-        questionsCount: Number(room.questionsCount),
-      }));
   
-      return sanitizedResults;
+    return results;
   });
 };
